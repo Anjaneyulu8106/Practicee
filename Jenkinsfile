@@ -23,10 +23,12 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                echo 'Running unit tests'
-            }
-        }
+    steps {
+        echo "Running tests..."
+        bat 'exit 1'
+    }
+}
+
 
         stage('Deploy') {
             steps {
