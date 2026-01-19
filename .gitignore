@@ -1,0 +1,13 @@
+# Environment & secrets
+.env
+
+# Logs
+*.log
+
+# Build outputs
+target/
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
