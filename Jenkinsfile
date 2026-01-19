@@ -1,6 +1,14 @@
 pipeline {
     agent any
 
+    parameters {
+        choice(
+            name: 'ENV',
+            choices: ['DEV', 'QA', 'PROD'],
+            description: 'Select deployment environment'
+        )
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -22,7 +30,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo "Deploying application to ${ENV}"
+                echo "Deploying application to ${params.ENV}"
             }
         }
     }
